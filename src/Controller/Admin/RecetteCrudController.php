@@ -29,6 +29,7 @@ class RecetteCrudController extends AbstractCrudController
             TextareaField::new('description'),
             IntegerField::new('time'),
             IntegerField::new('nbrperson'),
+            TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
             ImageField::new('file')
                 ->setUploadDir('public/uploads')
                 ->setBasePath('uploads')

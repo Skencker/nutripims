@@ -4,9 +4,12 @@ namespace App\Entity;
 
 use App\Repository\RecetteRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=RecetteRepository::class)
+ * @Vich\Uploadable
  */
 class Recette
 {
@@ -31,6 +34,12 @@ class Recette
      * @ORM\Column(type="string", length=255)
      */
     private $file;
+    
+    /**
+     * @Vich\UploadableField(mapping="recette_images", fileNameProperty="file")
+     * @var File
+     */
+    private $imageFile;
 
     /**
      * @ORM\Column(type="text")
@@ -101,6 +110,22 @@ class Recette
         $this->file = $file;
 
         return $this;
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageFile(File $file = null)
+    {
+        $this->imageFile = $file;
+
+         if (null !== $file) {
+            // Il est nécessaire qu'au moins un champ change si vous utilisez la doctrine
+            // sinon les écouteurs d'événements ne seront pas appelés et le fichier sera perdu.
+            $this->updatedAt = new \DateTime();
+        }
     }
 
     public function getIngredients(): ?string
