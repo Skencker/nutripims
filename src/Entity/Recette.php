@@ -41,6 +41,7 @@ class Recette
      */
     private $imageFile;
 
+
     /**
      * @ORM\Column(type="text")
      */
@@ -121,11 +122,11 @@ class Recette
     {
         $this->imageFile = $file;
 
-         if (null !== $file) {
+        //  if (null !== $file) {
             // Il est nécessaire qu'au moins un champ change si vous utilisez la doctrine
             // sinon les écouteurs d'événements ne seront pas appelés et le fichier sera perdu.
-            $this->updatedAt = new \DateTime();
-        }
+            // $this->updatedAt = new \DateTime();
+        // }
     }
 
     public function getIngredients(): ?string
