@@ -9,16 +9,8 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=RecetteRepository::class)
-  * @Vich\UploadableField(
- *      mapping="recette_image",
- *      fileNameProperty="imageFile.name",
- *      size="imageFile.size",
- *      originalName="imageFile.originalName",
- *      mimeType="imageFile.mimeType"
- * )
+ * @Vich\Uploadable
  */
-
- 
 class Recette
 {
     /**
