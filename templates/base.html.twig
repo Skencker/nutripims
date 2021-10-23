@@ -55,17 +55,17 @@
                     
                     {% if app.user %}
                     <li class="nav-item fs-5">
-                        <a href="{{ path('app_logout')}}"class="nav-link bg-secondary rounded text-light" > Deconnexion</a> 
+                        {# <a href="{{ path('app_logout')}}"class="nav-link bg-secondary rounded text-light" > Deconnexion</a>  #}
                     </li>
                     <li class="nav-item">
                     <a href="{{ path('account')}}"class="nav-link" ><i class="bi bi-person-fill fs-3 btn-danger me-2 rounded"></i> <small>({{app.user.firstname}})</small></a>
                     </li>
                     {% else %}
                      <li class="nav-item fs-5">
-                        <a class="nav-link bg-secondary rounded text-light" href="{{ path('app_login')}}" > Connexion </a>   
+                        {# <a class="nav-link bg-secondary rounded text-light" href="{{ path('app_login')}}" > Connexion </a>    #}
                     </li>
                      <li class="nav-item fs-5">
-                        <a href="{{ path('register')}}"class="nav-link bg-secondary rounded text-light ms-3 me-3" > Inscription</a> 
+                        {# <a href="{{ path('register')}}"class="nav-link bg-secondary rounded text-light ms-3 me-3" > Inscription</a>  #}
                     </li>
                     {% endif %}
 
