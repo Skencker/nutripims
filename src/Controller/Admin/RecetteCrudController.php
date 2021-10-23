@@ -27,11 +27,12 @@ class RecetteCrudController extends AbstractCrudController
             TextField::new('name'),
             SlugField::new('slug')->setTargetFieldName('name'),
             AssociationField::new('category'),
-            TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
+            TextField::new('imageFile')->setFormType(VichImageType::class),
+                // ->onlyWhenCreating(),
             ImageField::new('file')
-                ->setUploadDir('public/uploads/images')
+                // ->setUploadDir('public/uploads/images')
                 ->setBasePath('uploads/images')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                // ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false)
                 ->onlyOnIndex(),
             TextareaField::new('ingredients'),
