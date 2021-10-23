@@ -10,6 +10,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
+
 
 class RecetteCrudController extends AbstractCrudController
 {
