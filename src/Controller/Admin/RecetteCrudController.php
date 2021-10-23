@@ -26,7 +26,7 @@ class RecetteCrudController extends AbstractCrudController
             SlugField::new('slug')->setTargetFieldName('name'),
             AssociationField::new('category'),
             TextareaField::new('ingredients'),
-            TextareaField::new('preparation'),
+            // TextareaField::new('preparation'),
             IntegerField::new('time'),
             IntegerField::new('nbrperson'),
             ImageField::new('file')
