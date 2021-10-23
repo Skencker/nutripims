@@ -37,6 +37,7 @@ class RecetteCrudController extends AbstractCrudController
                 ->setBasePath('uploads')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false)
+                ->onlyOnIndex()
         ];
     }
     
