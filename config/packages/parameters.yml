@@ -1,0 +1,7 @@
+parameters:
+    database_host: sandrih772.mysql.db
+    database_port: null
+    database_name: sandrih772
+    database_user: sandrih772
+    database_password: Pimous3131
+
