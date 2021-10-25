@@ -34,8 +34,8 @@ class RecetteCrudController extends AbstractCrudController
             TextField::new('imageFile')->setFormType(VichImageType::class),
                 // ->onlyWhenCreating(),
             ImageField::new('file')
-                ->setUploadDir('public/uploads/images')
-                ->setBasePath('uploads/images')
+                // ->setUploadDir('public/uploads/images')
+                ->setBasePath('/uploads/images/')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false)
                 ->onlyOnIndex(),
@@ -47,4 +47,7 @@ class RecetteCrudController extends AbstractCrudController
     }
     
 }
+// textField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
+            
+// ImageField::new('file')->setBasePath('/uploads/illustrations/')->onlyOnIndex()
 
